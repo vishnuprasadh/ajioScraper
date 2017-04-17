@@ -1,6 +1,32 @@
 import numpy as np
 import json
 from json import dumps
+import pandas as pd
+import datetime
+from datetime import timedelta
+
+def _getrandomdate():
+    '''year = np.random.choice(2014,2017,1)
+    month = np.random.choice(1,12)
+    day = np.random.choice(1,30)
+    hour = np.random.choice(0,24)
+    mins = np.random.choice(0,59)
+    secs = np.random.choice(0,59)
+    datetimenow = datetime.datetime(year,month,day,hour,mins,secs)
+    print(datetimenow.isoformat())'''
+    #nowtime = datetime.datetime.now()
+    #np.random.seed(3)
+    randdays = np.random.randint(1, 720)
+    randhrs = np.random.randint(1,24)
+    randminutes = np.random.randint(1,59)
+    randsecs = np.random.randint(3,42)
+    nowtime = datetime.datetime.today() - timedelta(days=randdays,hours=randhrs,minutes=randminutes,seconds=randsecs)
+    return nowtime
+
+for n in range(1,20):
+    np.random.seed(n)
+    print(_getrandomdate())
+
 
 alist = {1,2,4,5,3}
 
