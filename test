@@ -1,0 +1,55 @@
+import numpy as np
+import json
+from json import dumps
+
+alist = {1,2,4,5,3}
+
+v ={3}
+
+new = alist.difference(v)
+
+print(new)
+
+colors =[]
+colors.append({"color":"red","id":23329})
+colors.append({"color":"blue","id":12232})
+
+a = {"code":12121, "name":"Denim wear","colors":colors}
+
+b = {"price":12199, "Inventory":"High",
+     "code": a["code"], "name":"Denim wear",
+     "colors":colors
+     }
+
+for  color in b["colors"]:
+    print(color)
+
+data = "{}"
+
+
+
+print(data)
+
+print(b)
+
+
+'''
+
+color = ['light blue','red']
+print(color)
+print(np.array(new))
+print(",".join(color))
+
+
+text ="/puma-spray-dyed-crew-neck-sweater/p/460074463_blue"
+text = text.split("/p/")
+print(text[1])
+
+price = "232,343.89"
+
+print(price.replace(",",""))
+
+for index in range(1,10):
+    print(index)
+
+'''
