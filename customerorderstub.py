@@ -11,23 +11,32 @@ import math
 class customerorderstub:
     df = pd.DataFrame()
     products = pd.Series()
+    randproducts = list()
+
     def __init__(self):
         prdunique = pd.Series()
-        self.df = pd.read_csv( os.path.join(os.path.dirname(__file__), 'products.csv'))
+        self.df = pd.read_csv( os.path.join(os.path.dirname(__file__), 'products1.csv'))
         self.products = pd.Series(self.df["productid"]).unique()
+
+        index =0
+        for index in range(0,800):
+            self.randproducts.append( np.random.choice(self.products,1)[0])
+
+        print(self.randproducts)
 
     basket = list()
 
     def generate(self):
+
         userprodmatrix = dict()
-        for user in range(1000,12000):
+        for user in range(10000,22000):
             np.random.seed()
             ordercount = np.random.randint(1,10)
             print("User {} has {} orders".format(user,ordercount))
             basket = list()
             for orderrange in range(0,ordercount):
                 np.random.seed()
-                prodid = np.random.choice(self.products,1)[0]
+                prodid = np.random.choice(self.randproducts,1)[0]
 
                 if userprodmatrix and userprodmatrix.get(user) == prodid:
                     orderrange = orderrange -1
