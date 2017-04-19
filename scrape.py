@@ -74,7 +74,8 @@ class scrape:
         #display = Display(backend=True, visible=False,size=(100,100))
         #display.start()
         '''if we know number of pages, lets open them up by clicking load more so that we have all items opened up'''
-        self.webbrowser = wd.Chrome(os.path.join( os.path.dirname(__file__) ,'chromedriver'))
+        print("Path is in {}".format(os.path.join( os.path.dirname(__file__),'driver/chromedriver')))
+        self.webbrowser = wd.Chrome(os.path.join( os.path.dirname(__file__) ,'driver/chromedriver'))
         self.webbrowser.get(plpurl)
 
         '''does loadmore exist'''
