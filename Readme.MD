@@ -12,6 +12,7 @@ Then the program gets to the next level into product details of every product to
 
 
 <b> How to execute ?</b>
+
 Download the program into a folder and enter the folder and hit:
 
 ```bash
@@ -30,6 +31,8 @@ python3 scrape.py
 NOTE THAT THE URLLIB, REQUESTS AND OTHER MODULES USED ARE SUPPORTED ONLY IN PYTHON 3, SO THIS IS NOT SUPPORTED FOR PYTHON 2.X
 
 <b>What is the output ?</b>
+
+
 The output of this program will be products.csv with the following attributes scraped.
 
 ```bash
@@ -39,9 +42,27 @@ PERFORMAX	Boasting QuickDry technology, side slip pockets that extend to the bac
 
 ```
 
+<b>Modules </b>
+
+scrape.py - Core of scrapper
+
+customerorderstib.py - generates customerorder.csv which gives dynamic orderdate, cartsize(qty), productid, userid for machine learning usecases.
+
 <b>Uses ?</b>
 
 This can be used for warmup of pages like PLP, PDP and also images during late hours to avoid more stress during peak.
 
 Other use is to use another module which I have added i.e. 'Customerorderstub' which generates or simulates customer's Id and picks up the product id and dynamically generates orders which can then be used for any analysis required for Machine learning usecases.
+
+<b>Debts</b>
+
+Following debts are to be taken care in future:
+
+1. Reading data in chunks
+
+2. Giving an interactive option to user to select which category to scrape and which one to skip
+
+3. Writing data in chunks
+
+4. Optimization of chromedriver/selenium interfacing i.e. background mode and wait operations.
 
